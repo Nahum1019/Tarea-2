@@ -1,0 +1,456 @@
+/* ============================================
+   Página Web Personalizada - Programación Web
+   ============================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #0a0a0a;
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(135deg, #00e5ff, #0077ff);
+  color: #000000;
+  padding: 28px 40px;
+  text-align: center;
+  margin: 18px auto;
+  max-width: 1100px;
+  border-radius: 40px;
+  box-shadow: 0 0 22px rgba(0, 229, 255, 0.5);
+}
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 6px;
+  font-style: italic;
+  font-weight: bold;
+  color: #000000;
+}
+header p { font-size: 1rem; text-align: center; color: #000000; }
+.header-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* ===== NAVEGACIÓN ===== */
+nav {
+  background: linear-gradient(90deg, #7b00ff, #cc00ff);
+  padding: 0;
+  margin: 0 auto 18px auto;
+  max-width: 1100px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(150, 0, 255, 0.5);
+}
+.menu-toggle { display: none; }
+.menu-icon { display: none; }
+nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
+nav ul li { margin: 0; }
+nav ul li a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 20px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+nav ul li a:hover { background-color: rgba(255,255,255,0.2); }
+nav ul li a.activo { background-color: rgba(255,255,255,0.15); }
+
+/* ---- 4. SECCIONES (estructura general) ---- */
+main { max-width: 1100px; margin: 0 auto 30px auto; padding: 0 15px; }
+ 
+section {
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+}
+section h2 {
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 20px;
+  margin: 0;
+}
+section h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 9px 13px;
+  margin: 10px 14px 0 14px;
+  border-radius: 8px 8px 0 0;
+}
+section h3 + p,
+section h3 + ul {
+  margin: 0 14px 0 14px;
+  padding: 10px 13px 13px 13px;
+  border-radius: 0 0 8px 8px;
+  text-align: justify;
+}
+section h3 + ul { padding-left: 32px; list-style: disc; }
+section > p {
+  margin: 10px 14px 0 14px;
+  padding: 10px 13px;
+  border-radius: 8px;
+  text-align: justify;
+}
+ 
+ 
+/* ---- 5. COLORES POR SECCIÓN ---- */
+ 
+/* INICIO — verde */
+#inicio           { background-color: #003300; }
+#inicio h2        { background-color: #006600; color: #fff; }
+#inicio h3        { background-color: #008800; color: #fff; }
+#inicio h3 + p,
+#inicio > p       { background-color: #005500; color: #fff; }
+ 
+/* BIOGRAFÍA — azul */
+#biografia        { background-color: #001144; }
+#biografia h2     { background-color: #0033aa; color: #fff; }
+#biografia h3     { background-color: #0055dd; color: #fff; }
+#biografia h3 + p,
+#biografia h3 + ul,
+#biografia > p    { background-color: #002288; color: #fff; }
+ 
+/* FAMILIA — morado */
+#familia          { background-color: #e4f312; }
+#familia h2       { background-color: #f5e509; color: #000000; }
+#familia h3       { background-color: #fffb00; color: #000000; }
+#familia h3 + p,
+#familia > p      { background-color: #d6f334; color: #000000; }
+ 
+/* ESTUDIOS — rojo */
+#estudios         { background-color: #440000; }
+#estudios h2      { background-color: #aa0000; color: #fff; }
+#estudios h3      { background-color: #dd1100; color: #fff; }
+#estudios h3 + p,
+#estudios > p     { background-color: #880000; color: #fff; }
+ 
+/* MATERIALES — naranja */
+#materiales       { background-color: #4a2000; }
+#materiales h2    { background-color: #cc5500; color: #000; }
+#materiales h3    { background-color: #ff7700; color: #000; }
+#materiales h3 + p,
+#materiales > p   { background-color: #dd5500; color: #000; }
+ 
+/* ÁLBUM — cian */
+#album            { background-color: #003344; }
+#album h2         { background-color: #007799; color: #000; }
+#album h3         { background-color: #00aacc; color: #000; }
+#album h3 + p,
+#album > p        { background-color: #006688; color: #fff; }
+ 
+/* DESCARGAS — verde azulado */
+#descargas        { background-color: #002211; }
+#descargas h2     { background-color: #007744; color: #fff; }
+#descargas h3     { background-color: #00aa55; color: #000; }
+#descargas h3 + p,
+#descargas > p    { background-color: #005533; color: #fff; }
+ 
+/* INFO ADICIONAL — dorado */
+#info             { background-color: #332200; }
+#info h2          { background-color: #aa7700; color: #000; }
+#info h3          { background-color: #ffaa00; color: #000; }
+#info h3 + p,
+#info > p         { background-color: #885500; color: #fff; }
+ 
+ 
+/* ---- 6. INFO-BOX (cajas de contenido) ---- */
+.info-box {
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 14px 0 14px;
+}
+.info-box h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 9px 13px;
+  margin: 0;
+  border-radius: 0;
+}
+.info-box p {
+  padding: 10px 13px 13px 13px;
+  margin: 0;
+  text-align: justify;
+}
+ 
+/* Lista dentro de info-box */
+.info-box ul {
+  padding: 10px 13px 13px 32px;
+  margin: 0;
+  list-style: disc;
+}
+.info-box ul li { margin-bottom: 5px; }
+ 
+/* Colores de info-box por sección */
+#inicio    .info-box h3 { background-color: #008800; color: #fff; }
+#inicio    .info-box p,
+#inicio    .info-box ul { background-color: #005500; color: #fff; }
+ 
+#biografia .info-box h3 { background-color: #0055dd; color: #fff; }
+#biografia .info-box p,
+#biografia .info-box ul { background-color: #002288; color: #fff; }
+ 
+#familia   .info-box h3 { background-color: #f7df09; color: #000000; }
+#familia   .info-box p,
+#familia   .info-box ul { background-color: #f0d806; color: #000000; }
+ 
+#estudios  .info-box h3 { background-color: #dd1100; color: #fff; }
+#estudios  .info-box p,
+#estudios  .info-box ul { background-color: #880000; color: #fff; }
+ 
+#materiales .info-box h3 { background-color: #ff7700; color: #000; }
+#materiales .info-box p,
+#materiales .info-box ul { background-color: #dd5500; color: #000; }
+ 
+#album     .info-box h3 { background-color: #00aacc; color: #000; }
+#album     .info-box p,
+#album     .info-box ul { background-color: #006688; color: #fff; }
+ 
+#descargas .info-box h3 { background-color: #00aa55; color: #000; }
+#descargas .info-box p,
+#descargas .info-box ul { background-color: #005533; color: #fff; }
+ 
+#info      .info-box h3 { background-color: #ffaa00; color: #000; }
+#info      .info-box p,
+#info      .info-box ul { background-color: #885500; color: #fff; }
+ 
+/* Sidebar oculto */
+.sidebar { display: none !important; }
+ 
+ 
+/* ---- 7. GALERÍA ---- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 11px;
+  margin: 10px 14px 0 14px;
+}
+.galeria figure { border-radius: 8px; overflow: hidden; transition: transform 0.2s; }
+.galeria figure:hover { transform: scale(1.03); }
+.galeria img { width: 100%; height: 200px; object-fit: cover; object-position: center top; display: block; }
+.galeria figcaption { padding: 7px; text-align: center; font-size: 0.8rem; background-color: #006688; color: #fff; }
+ 
+.video-container { margin: 12px 14px 0 14px; text-align: center; }
+.video-container video { max-width: 100%; border-radius: 10px; }
+ 
+ 
+/* ---- 8. TABLA ---- */
+table { width: calc(100% - 28px); margin: 10px 14px 0 14px; border-collapse: collapse; overflow: hidden; }
+table th { background-color: #ff7700; color: #000; padding: 10px 12px; text-align: center; font-family: 'Courier New', Courier, monospace; }
+table td { padding: 10px 12px; background-color: #dd5500; color: #000; border-bottom: 1px solid #ff7700; }
+table tr:hover td { background-color: #ff7700; }
+ 
+ 
+/* ---- 9. FORMULARIOS ---- */
+form { display: flex; flex-direction: column; gap: 10px; margin: 10px 14px 0 14px; max-width: 560px; }
+form label { font-weight: bold; color: #ffaa00; }
+form input, form textarea, form select {
+  padding: 9px;
+  border: 2px solid #ffaa00;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  background: #fff8cc;
+  color: #000;
+}
+form input:focus, form textarea:focus, form select:focus { outline: none; border-color: #fff; }
+form button {
+  background-color: #ffaa00;
+  color: #000;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  align-self: flex-start;
+}
+form button:hover { background-color: #000; color: #ffaa00; }
+ 
+ 
+/* ---- 10. DESCARGAS ---- */
+.descargas-lista {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 13px;
+  margin: 10px 14px 0 14px;
+}
+.descarga-item {
+  background-color: #007744;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.descarga-item:hover { transform: translateY(-3px); }
+.descarga-item .icono { font-size: 1.8rem; margin-bottom: 6px; }
+.descarga-item h3 { background: none; color: #000; padding: 0; margin: 0 0 5px 0; border-radius: 0; }
+.descarga-item p  { background: none; color: #000; padding: 0; margin: 0 0 10px 0; font-size: 0.88rem; }
+.descarga-item a.btn-descarga {
+  background-color: #000;
+  color: #00ff88;
+  padding: 7px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+.descarga-item a.btn-descarga:hover { background-color: #222; }
+ 
+ 
+/* ---- 11. ENLACES EXTERNOS ---- */
+.enlaces-externos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 11px;
+  margin: 10px 14px 0 14px;
+}
+.enlaces-externos a {
+  display: block;
+  background-color: #006600;
+  color: #fff;
+  padding: 11px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.enlaces-externos a:hover { background-color: #009900; transform: translateY(-2px); }
+ 
+ 
+/* ---- 12. REDES SOCIALES ---- */
+.redes-box {
+  background-color: #14f5c4;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 14px 0 14px;
+  padding-bottom: 14px;
+}
+.redes-box h3 {
+  background-color: #1df09f;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 9px 13px;
+  margin: 0;
+}
+.redes-box .enlaces-externos a {
+  background-color: #53db05;
+  color: #000000;
+}
+.redes-box .enlaces-externos a:hover { background-color: #1192dd; }
+ 
+ 
+/* ---- 13. FOOTER ---- */
+footer {
+  background-color: #0aee69;
+  color: #000000;
+  text-align: center;
+  padding: 22px 20px;
+  margin: 0 auto 18px auto;
+  max-width: 1100px;
+  border-radius: 28px;
+}
+footer p { margin: 4px 0; color: #000000; font-weight: bold; }
+footer a { color: #000000; font-weight: bold; }
+footer a:hover { color: #000000; }
+ 
+ 
+/* ---- 14. RESPONSIVE ---- */
+@media (max-width: 768px) {
+  header { border-radius: 18px; margin: 10px; padding: 18px; }
+  header h1 { font-size: 1.5rem; }
+ 
+  nav { border-radius: 18px; margin: 0 10px 12px 10px; }
+  .menu-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    user-select: none;
+  }
+  .menu-icon span:not(.menu-text) {
+    display: block; width: 22px; height: 3px; background: #fff;
+    border-radius: 2px; margin: 3px 0; transition: transform 0.3s, opacity 0.3s;
+  }
+  .menu-icon .menu-text { margin-left: 6px; }
+  nav ul { display: none; flex-direction: column; }
+  .menu-toggle:checked ~ ul { display: flex; }
+  .menu-toggle:checked ~ .menu-icon span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .menu-toggle:checked ~ .menu-icon span:nth-child(2) { opacity: 0; }
+  .menu-toggle:checked ~ .menu-icon span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  nav ul li a { text-align: center; padding: 12px; border-top: 1px solid rgba(255,255,255,0.15); }
+ 
+  main { padding: 0 10px; }
+  section { border-radius: 10px; }
+  .galeria { grid-template-columns: repeat(2, 1fr); }
+  footer { border-radius: 14px; margin: 0 10px 14px 10px; }
+}
+
+
+/* ---- 15. NAVEGACIÓN POR SECCIONES (:target) ---- */
+
+/* Botón volver al inicio */
+.btn-volver {
+  display: block;
+  text-align: center;
+  padding: 10px 14px 0 14px;
+}
+.btn-volver a {
+  display: inline-block;
+  background-color: #7700cc;
+  color: #fff;
+  padding: 9px 22px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Ocultar todas las secciones excepto inicio por defecto */
+#biografia, #familia, #estudios,
+#materiales, #album, #descargas, #info {
+  display: none;
+}
+
+/* Mostrar la sección cuando se hace clic en su enlace */
+#biografia:target, #familia:target, #estudios:target,
+#materiales:target, #album:target, #descargas:target,
+#info:target {
+  display: block;
+}
+
+/* Botón volver: oculto por defecto */
+.btn-volver { display: none; }
+
+/* Mostrar botón volver cuando hay sección activa */
+#biografia:target ~ .btn-volver,
+#familia:target ~ .btn-volver,
+#estudios:target ~ .btn-volver,
+#materiales:target ~ .btn-volver,
+#album:target ~ .btn-volver,
+#descargas:target ~ .btn-volver,
+#info:target ~ .btn-volver {
+  display: block;
+}
